@@ -1,6 +1,13 @@
 {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}
+    <!--
+        url: Keyword used to invoke URL template tag
+        polls:details => goes into urls.py and refers to the unique name for each pattern
+                        in this case its detail in the polls url.py
+        question.id: Parameter being passed to the view associated with the URL pattern,
+                    id of the question object and it will be used as the pk parameter in the URL pattern
+    -->
         <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
     {% endfor %}
     </ul>
