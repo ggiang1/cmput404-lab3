@@ -78,4 +78,4 @@ def update_question(request, pk):
         # serializer.update(questions)
         serializer.save()
         return Response(serializer.data)
-    return Response(status=400, data=serializer.errors)
+    return Response(status=400, data=serializer.errors) 
